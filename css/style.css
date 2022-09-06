@@ -125,7 +125,8 @@ header h1 {
 }
 
 .descriptionUser p {
-  width: 160px;
+  inline-size: 160px;
+  min-width: 160px;
   text-align: left;
   padding: 0 10px;
 }
