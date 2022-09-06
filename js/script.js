@@ -58,8 +58,27 @@ for (let i = 0; i < team.length; i++) {
     }
 }
 
-// MILESTONE 2:
-// Stampo le stesse informazioni su DOM sottoforma di stringhe
+/*
+    // MILESTONE 2:
+    // Stampo le stesse informazioni su DOM sottoforma di stringhe
+    const container = document.querySelector(".milestone2");
+
+    for (let i = 0; i < team.length; i++) {
+        const teamUser = team[i];
+
+        container.innerHTML += `<h2>Utente ${i + 1}:</h2>`;
+
+        for (let key in teamUser) {
+            container.innerHTML += 
+            `<p>
+                ${key}: ${teamUser[key]}
+            </p>`;
+        }
+    }
+*/
+
+// BONUS 1:
+// Trasformo la stringa foto in una immagine effettiva
 const container = document.querySelector(".milestone2");
 
 for (let i = 0; i < team.length; i++) {
@@ -68,9 +87,13 @@ for (let i = 0; i < team.length; i++) {
     container.innerHTML += `<h2>Utente ${i + 1}:</h2>`;
 
     for (let key in teamUser) {
-        container.innerHTML += 
-        `<p>
-            ${key}: ${teamUser[key]}
-        </p>`;
+
+        const detailUser = teamUser[key];
+
+        if(key !== "foto"){
+            container.innerHTML += `<p>${key}: ${detailUser}</p>`;
+        } else {
+            container.innerHTML += `<p>${key}:</p> <img src="img/${detailUser}" alt="${detailUser}">`;
+        }
     }
 }
