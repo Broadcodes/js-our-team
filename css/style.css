@@ -10,19 +10,111 @@ body {
 
 header{
     background-color: #222;
+    overflow-x: hidden;
 }
 
 header h1{
+    
     position: relative;
     left: 50px;
     font-size: 3rem;
     color: #999;
     font-family: 'Montserrat', sans-serif;
-    padding: 30px;
+    padding: 25px;
     animation: opacity 5s;
 }
 
 @keyframes opacity {
     from {opacity: 0; left: 0px;}
     to {opacity: 1; left: 50px}
+  }
+
+  .container{
+    height: calc(100vh - 109px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cards{
+    width: 70%;
+    height: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    animation: opacityCards 4s;
+  }
+
+  @keyframes opacityCards {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .card{
+    width: calc(100% / 3 - 20px);
+    height: calc(100% / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    justify-content: center;
+    position: relative;
+  }
+
+  .card img{
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    filter: grayscale(100%);
+  }
+
+  .card:hover img{
+    filter: grayscale(0%);
+  }
+
+  .card h2,
+  .card h3,
+  .card p{
+    padding: 5px 0;
+  }
+
+  .card h3{
+    color: rgb(0, 156, 156);
+  }
+
+  .card p{
+    text-align: center;
+  }
+
+
+  .card:hover .descriptionUser{
+    width: 55%;
+  }
+
+  .descriptionUser{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    z-index: 3;
+    font-family: 'Quicksand', sans-serif;
+    transition: width 2s;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px #777;
+  }
+
+  .descriptionUser p{
+    width: 160px;
+    text-align: left;
+    padding: 0 10px;
   }
