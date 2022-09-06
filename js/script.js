@@ -107,8 +107,8 @@ for (let i = 0; i < team.length; i++) {
 const cards = document.querySelector(".cards");
 
 // Funzione per modificare il testo "anno/i" nella descrizione in base al numero random generato
-function stringYears(numRandom){
-    if(numRandom === 1){
+function stringYears(numRandom) {
+    if (numRandom === 1) {
         return "anno";
     }
     return "anni";
@@ -163,8 +163,11 @@ for (let i = 0; i < team.length; i++) {
     // Aggiungo la descrizione completa ad ogni card
     descriptionUser.innerHTML += `<p class="description">${team[i].description}</p>`;
 
-    // Aggiungo gli elementi creati alla card
-    card.append(descriptionUser);
+    // Aggiungo una pausa di 2 sec all'inizio quando si carica la pagina
+    setTimeout(function () {
+        // Aggiungo gli elementi creati alla card
+        card.append(descriptionUser);
+    }, 2000);
 
     // Aggiungo gli elementi creati al DOM
     cards.append(card);
