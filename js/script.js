@@ -106,13 +106,23 @@ for (let i = 0; i < team.length; i++) {
 // Recupero l'elemento "cards" dall'HTML
 const cards = document.querySelector(".cards");
 
+// Funzione per modificare il testo "anno/i" nella descrizione in base al numero random generato
+function stringYears(numRandom){
+    if(numRandom === 1){
+        return "anno";
+    }
+    return "anni";
+}
+
 // Ciclo per la lunghezza totale dell'array-oggetto in modo da creare N card
 for (let i = 0; i < team.length; i++) {
 
     // Aggiungo altre informazioni (non richieste dalla consegna dell'esercizio) all'oggetto
     // PRIMO DATO AGGIUNTO
+    const numberRandom = Math.floor(Math.random() * 10 + 1);
+
     team[i].shortDescription = `Mi chiamo ${team[i].nome}, sono un ${team[i].ruolo}
-    e lavoro in questa azienda da ${Math.floor(Math.random() * 10 + 1)} anni`;
+    e lavoro in questa azienda da ${numberRandom} ${stringYears(numberRandom)}`;
     // Nell'istruzione precedente ho creato un valore random per non avere dei valori statici, nella realtà non sarebbe così
 
     // SECONDO DATO AGGIUNTO
