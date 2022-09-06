@@ -11,7 +11,7 @@ BONUS 1:
 Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
 Organizzare i singoli membri in card/schede
-*/ 
+*/
 
 // Creazione di un array di oggetti per rappresentare i membri del team
 const team = [
@@ -49,11 +49,28 @@ const team = [
 
 // MILESTONE 1:
 // Stampo su console le informazioni di nome, ruolo e la stringa della foto
-for(let i = 0; i < team.length; i++){
+for (let i = 0; i < team.length; i++) {
     const teamUser = team[i];
 
     console.log(`Utente ${i + 1}:`);
-    for(let key in teamUser){
+    for (let key in teamUser) {
         console.log(`${key}: ${teamUser[key]}`);
+    }
+}
+
+// MILESTONE 2:
+// Stampo le stesse informazioni su DOM sottoforma di stringhe
+const container = document.querySelector(".milestone2");
+
+for (let i = 0; i < team.length; i++) {
+    const teamUser = team[i];
+
+    container.innerHTML += `<h2>Utente ${i + 1}:</h2>`;
+
+    for (let key in teamUser) {
+        container.innerHTML += 
+        `<p>
+            ${key}: ${teamUser[key]}
+        </p>`;
     }
 }
